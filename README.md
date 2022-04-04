@@ -64,3 +64,5 @@
 + https://docs.microsoft.com/ru-ru/virtualization/windowscontainers/quick-start/set-up-environment?tabs=Windows-Server
 <h2>Разработка архитектуры и детальное проектирование</h2>
 C4 model
+
+![image](https://user-images.githubusercontent.com/100081963/161613554-a10b3dc3-6654-412e-a88d-03fe60e80d73.png)<br>
