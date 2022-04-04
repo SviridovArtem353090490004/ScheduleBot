@@ -1,5 +1,7 @@
 const TelgramApi = require('node-telegram-bot-api')
 
+const token = '5015054418:AAEn2ngUqohwvmfpDjmUEol6Wi1ANnNqBUE'
+
 const bot = new TelgramApi(token, {polling: true})
 
 var users = [];  // { username, uid, ugroup }
