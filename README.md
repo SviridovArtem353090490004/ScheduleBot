@@ -9,6 +9,7 @@
 + Фёдоров Герман
 
 <h2>Определение проблемы</h2>
+
 Целью данного проекта является создание бота в телеграмме для поиска расписания занятий в СПБПУ
 <h2>Роли</h2>
 
@@ -16,7 +17,32 @@
 + Василевская Екатерина 
 + Свиридов Артём
 <h2>Запуск и тестирование программы</h2>
-Для запуска используем
+
+Для запуска используем<br>
+  1. Все возможные команды нашего бота:<br>
+![image](https://user-images.githubusercontent.com/71269602/161543071-69cb810e-e52b-4b2e-acdc-ba5c3f565d92.png)<br>
+  2. Ввод корректных данных:<br>
+![image](https://user-images.githubusercontent.com/71269602/161543439-4154a7c7-ef7f-43e2-a35f-22f194278ba3.png)<br>
+  3. Ввод ошибочных данных:<br>
+![image](https://user-images.githubusercontent.com/71269602/161543706-bfe107f4-0589-4cc2-8bd9-5568685b9c2a.png)<br>
+  4. Добавление заметок <br>
+![image](https://user-images.githubusercontent.com/71269602/161544363-3e61132f-ee01-4e3e-bda4-e2eb137d2326.png)<br>
+  5. Показать заметки для группы <br>
+![image](https://user-images.githubusercontent.com/71269602/161544818-c903bd47-e5ea-4e93-a454-f93d35dafb98.png)<br>
+  6. Удаление заметки для группы <br>
+![image](https://user-images.githubusercontent.com/71269602/161545200-10320aed-2a2f-4757-9518-e9f85a1ebc9a.png)<br>
+  7. Показать расписание<br>
+![image](https://user-images.githubusercontent.com/71269602/161545404-73e22dc5-8c7d-4ba7-8ab6-895954177ec0.png)<br>
+  8. Показать дополнительные ссылки <br>
+![image](https://user-images.githubusercontent.com/71269602/161545367-41105ad9-2b9b-44c1-9546-884cb0d60b13.png)<br>
+
+
+
+
+ 
+
+
+
 <h2>Упаковка бота в Docker контейнер и его деплой</h2>
 
 Запуск в docker кнтейнере:
