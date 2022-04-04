@@ -18,7 +18,18 @@
 + Свиридов Артём
 <h2>Запуск и тестирование программы</h2>
 
-Для запуска используем<br>
+Для запуска используем JavaScript версии ECMASript 6+ <br>
+
+Также потребуется установить: <br>
++ Node.js
+
+Для использования бота необходимо перейти в Telegram и найти его по следующему имени
++ @Polytech_tt_Bot
+
+Для запуска тестов использовалась следующая команда 
++ Npm run dev
+    
+    
   1. Все возможные команды нашего бота:<br>
 ![image](https://user-images.githubusercontent.com/71269602/161543071-69cb810e-e52b-4b2e-acdc-ba5c3f565d92.png)<br>
   2. Ввод корректных данных:<br>
@@ -35,7 +46,6 @@
 ![image](https://user-images.githubusercontent.com/71269602/161545404-73e22dc5-8c7d-4ba7-8ab6-895954177ec0.png)<br>
   8. Показать дополнительные ссылки <br>
 ![image](https://user-images.githubusercontent.com/71269602/161545367-41105ad9-2b9b-44c1-9546-884cb0d60b13.png)<br>
-
 
 
 
