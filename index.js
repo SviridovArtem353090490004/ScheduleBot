@@ -1,6 +1,6 @@
 const TelgramApi = require('node-telegram-bot-api')
 
-const token = '5015054418:AAEn2ngUqohwvmfpDjmUEol6Wi1ANnNqBUE'
+const token = ''
 
 const bot = new TelgramApi(token, {polling: true})
 
@@ -192,23 +192,6 @@ bot.onText(/getGroupNotes/, function (msg) {
     }
 });
 
-bot.onText(/remind (.+) in (.+) description (.+)/, function (msg, match) {
-    var userId = msg.from.id;
-    var text = match[1];
-    var time = match[2];
-    var description = match[3];
-    var announcementMonth = false;
-    var announcementDay = false;
-
-    if (isDate(time)) {
-        notes.push({ 'uid': userId, 'time': time, 'text': text, 'description': description, 'announcementMonth': announcementMonth, 'announcementDay': announcementDay});
-
-        bot.sendMessage(userId, 'Okay, i will remind it to you!');
-    }
-    else {
-        bot.sendMessage(userId, 'Wrong date format!');
-    }
-});
 
 bot.onText(/getNotes/, function (msg) {
     var userId = msg.from.id;
@@ -291,51 +274,3 @@ bot.onText(/getLinks/, function (msg) {
 
     bot.sendMessage(userId, output);
 });
-
-setInterval(function() {
-    for (var i = 0; i < notes.length; i++) {
-        const curDate = new Date().getDate() + '.' + (new Date().getMonth() + 1) + ' ' + new Date().getHours() + ':' + new Date().getMinutes();
-        const curMonth = new Date().getMonth() + 1;
-        const curDay = new Date().getDate();
-        var noteDay = '';
-        var noteMonth = '';
-        var timeHour = '';
-        var timeMinute = '';
-        var n = 0;
-        while (notes[i]['time'][n] != '.') {
-            noteDay += notes[i]['time'][n];
-            ++n;
-        }
-        ++n;
-        while (notes[i]['time'][n] != ' ') {
-            noteMonth += notes[i]['time'][n];
-            ++n;
-        }
-        ++n;
-        while (notes[i]['time'][n] != ':') {
-            timeHour += notes[i]['time'][n];
-            ++n;
-        }
-        ++n;
-        while (n < notes[i]['time'].length) {
-            timeMinute += notes[i]['time'][n];
-            ++n;
-        }
-        if (('' + parseInt(noteDay ,10) + '.' + parseInt(noteMonth, 10) + ' ' + parseInt(timeHour, 10) + ':' + parseInt(timeMinute, 10)) === curDate) {
-            bot.sendMessage(notes[i]['uid'], 'You have the '+ notes[i]['text'] + ' now!\n' + 'Description - ' + notes[i]['description']);
-            notes.splice(i, 1);
-        }
-        else {
-            if ((noteDay == curDay) && (notes[i]['announcementDay'] != true)) {
-                bot.sendMessage(notes[i]['uid'], 'You have the '+ notes[i]['text'] + ' today!\n' + 'Description - ' + notes[i]['description']);
-                notes[i]['announcementDay'] = true;
-            }
-            else {
-                if ((noteMonth == curMonth) && (notes[i]['announcementMonth'] != true) && (notes[i]['announcementDay'] != true)) {
-                    bot.sendMessage(notes[i]['uid'], 'You have the '+ notes[i]['text'] + ' in this month!\n' + 'Description - ' + notes[i]['description']);
-                    notes[i]['announcementMonth'] = true;
-                }
-            }
-        }
-    }
-}, 1000);
